@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Dimensions, Text, StyleSheet } from 'react-native';
+import PadButton from './PadButton';
 
 const { width, height} = Dimensions.get('window');
 
@@ -14,7 +15,7 @@ class Numpad extends Component {
       <View style={styles.botton}>
         {datasource.map(btn => (
           <View style={{width: width/4 ,height: 90,borderTopWidth: 0.5,borderRightWidth:0.5, justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize:20}}>{btn.value}</Text>
+            <PadButton data={btn} />
           </View>
         ))}
       </View>
@@ -29,14 +30,6 @@ const styles = StyleSheet.create({
     flexWrap:'wrap',
     position: 'absolute',
     bottom: 0,
-  },
-  label: {
-    width: width / 4,
-    height: 90,
-    borderTopWidth: 0.5,
-    borderRightWidth:0.5,
-    justifyContent: 'center',
-    alignItems: 'center',
   }
 });
 export default Numpad;
