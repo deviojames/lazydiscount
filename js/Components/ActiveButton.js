@@ -23,6 +23,12 @@ const EqualButton = (props) => (
   </TouchableHighlight>
 );
 
+const ACButton = (props) => (
+  <TouchableHighlight style={styles.button} onPress={props.onPressfunction} underlayColor={props.underlayColor}>
+    <Text style={styles.acLabel}>{props.label}</Text>
+  </TouchableHighlight>
+);
+
 const styles = StyleSheet.create({
   button: {
     width: (width / 4) - 0.1,
@@ -36,6 +42,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     zIndex: 1,
     color: '#424242',
+  },
+  acLabel:{
+    fontSize: 20,
+    zIndex: 1,
+    color: '#FFB811'
   },
   equalBtn: {
     width: (width / 4) - 0.1,
@@ -79,4 +90,17 @@ EqualButton.defaultProps = {
   underlayColor: '#FFAA00'
 };
 
-export { ActiveButton, RegularButton, EqualButton };
+ACButton.propTypes = {
+  type: PropTypes.string.isRequired,
+  underlayColor: PropTypes.string,
+  lable: PropTypes.string
+};
+
+ACButton.defaultProps = {
+  underlayColor: '#E0E0E0',
+  lable: 'AC',
+};
+
+
+
+export { ActiveButton, RegularButton, EqualButton, ACButton };
