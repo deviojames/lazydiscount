@@ -1,36 +1,37 @@
 import React from 'react';
-import { View, Dimensions, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { Dimensions, StyleSheet, View } from 'react-native';
+import { ActiveButton, EqualButton, RegularButton } from './ActiveButton';
 
-const { width, height} = Dimensions.get('window');
+const width = Dimensions.get('window').width;
 
 const PadButton = ({data}) => {
-  if (data.value === 'del') {
+  if (data.value === 'delete' || data.value === 'divided' || data.value === 'multiply' || data.value === 'minus' || data.value === 'plus') {
     return (
-      <TouchableHighlight style={styles.button}>
-        <Text style={styles.regularLable}> DEL </Text>
-      </TouchableHighlight>
+      <ActiveButton type={data.value} />
     )
-  } else {
+  }
+  else if (data.value === 'equal') {
     return (
-      <TouchableHighlight style={styles.button}>
-        <Text style={styles.regularLable}>{data.value}</Text>
-      </TouchableHighlight>
+      <EqualButton type={data.value} onPressfunction={() => alert('res')} />
+    )
+  }
+  else if (data.value === 'empty') return ( <View style={styles.button}></View>)
+  else {
+    return (
+      <RegularButton value={data.value} onPressfunction={() => alert('res')}/>
     )
   }
 };
 
 const styles = StyleSheet.create({
   button: {
-    width: width / 4,
+    width: (width / 4) - 0.1,
     height: 90,
     borderTopWidth: 0.5,
-    borderRightWidth:0.5,
+    borderRightWidth:0.3,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  regularLable: {
-    fontSize: 20,
-  }
 });
 
 

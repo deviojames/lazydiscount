@@ -4,9 +4,9 @@ import PadButton from './PadButton';
 
 const { width, height} = Dimensions.get('window');
 
-const datasource = [ {value: "cancel"}, {value: "del"}, {value: "divide"},{value: "double"}, {value: "7"},
+const datasource = [ {value: "AC"}, {value: "delete"}, {value: "divided"},{value: "multiply"}, {value: "7"},
                {value: "8"}, {value: "9"}, {value: "minus"}, {value: "4"}, {value: "5"}, {value: "6"},{value: "plus"},
-               {value: "1"}, {value: "2"}, {value: "3"}, {value: "result"},{value: "00"}, {value: "0"}, {value: "."} ];
+               {value: "1"}, {value: "2"}, {value: "3"}, {value: "equal"}, {value: "empty"}, {value: "00"}, {value: "0"}, {value: "."} ];
 
 class Numpad extends Component {
 
@@ -14,9 +14,7 @@ class Numpad extends Component {
     return(
       <View style={styles.botton}>
         {datasource.map(btn => (
-          <View style={{width: width/4 ,height: 90,borderTopWidth: 0.5,borderRightWidth:0.5, justifyContent: 'center', alignItems: 'center'}}>
-            <PadButton data={btn} />
-          </View>
+          <PadButton data={btn} />
         ))}
       </View>
     )

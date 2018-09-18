@@ -28,3 +28,4 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+console.disableYellowBox = true;
