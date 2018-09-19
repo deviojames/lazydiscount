@@ -1,6 +1,6 @@
 class Calculator {
   static plus(firstIndex, secondIndex) {
-    return firstIndex + secondIndex;
+    return (parseInt(firstIndex) + parseInt(secondIndex)).toString();
   }
   static hundred(currentResult) {
     if (currentResult.length >= 12) return currentResult;
@@ -14,7 +14,7 @@ class Calculator {
     else return (parseInt(currentResult) * 10).toString();
   }
   static addInput(currentResult, incomingValue) {
-    if (currentResult.length > 12) return currentValue;
+    if (currentResult.length > 12) return currentResult;
     else{
       if (currentResult === '0') return incomingValue;
       else return `${currentResult}${incomingValue}`;
