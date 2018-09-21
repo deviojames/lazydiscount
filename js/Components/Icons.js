@@ -12,10 +12,16 @@ const iconImages = {
 };
 
 const Icons = (props) => (
-  <Image style={{width: 20, height: 20}} source={iconImages[props.type]} />
+  <Image style={{width: 20, height: 20, tintColor: props.color}} source={iconImages[props.type]} />
 );
 
 Icons.propTypes = {
   type: PropTypes.string.isRequired,
+  color: PropTypes.string
 };
+
+Icons.defaultProps = {
+  color: 'black'
+}
+
 export default Icons;

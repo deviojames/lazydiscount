@@ -19,7 +19,7 @@ const RegularButton = (props) => (
 
 const EqualButton = (props) => (
   <TouchableHighlight style={styles.equalBtn} onPress={props.onPressfunction} underlayColor={props.underlayColor}>
-    <Icons type={props.type} />
+    <Icons type={props.type} color="white" />
   </TouchableHighlight>
 );
 
@@ -31,10 +31,8 @@ const ACButton = (props) => (
 
 const styles = StyleSheet.create({
   button: {
-    width: (width / 4) - 0.1,
+    width: width / 4,
     height: 90,
-    borderTopWidth: 0.5,
-    borderRightWidth:0.3,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -51,8 +49,6 @@ const styles = StyleSheet.create({
   equalBtn: {
     width: (width / 4) - 0.1,
     height: 180,
-    borderTopWidth: 0.5,
-    borderRightWidth:0.3,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'flex-end',

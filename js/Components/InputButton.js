@@ -39,10 +39,8 @@ class InputButton extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    width: (width / 4) - 0.1,
+    width: width / 4,
     height: 90,
-    borderTopWidth: 0.5,
-    borderRightWidth:0.3,
     justifyContent: 'center',
     alignItems: 'center',
   },
